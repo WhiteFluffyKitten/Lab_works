@@ -77,7 +77,7 @@ int main()
 
 	int k = 0;
 	int i = -1;
-	cout << endl<< "Ââåäèòå èíäåêñ ñ êîíöà k: ";
+	cout << endl<< "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð½Ð´ÐµÐºÑ Ñ ÐºÐ¾Ð½Ñ†Ð° k: ";
 	cin >> k;
 	SLList* elem = FindElement(list, k, i);
 	if (elem == NULL)
