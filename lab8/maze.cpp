@@ -10,14 +10,6 @@ const MCell& Maze::cell(int i, int j) const
 	return m_field[i * n + j];
 }
 
-int Maze::GetN() const
-{
-	return n;
-}
-int Maze::GetM() const
-{
-	return m;
-}
 bool Maze::hasConnection(int i1, int j1, int i2, int j2)
 {
 	if (abs(j2 - j1) == 0 && abs(i2 - i1) == 1)
@@ -58,9 +50,9 @@ bool Maze::removeConnection(int i1, int j1, int i2, int j2)
 }
 void Maze::printMaze()
 {
-	for (int i = 0; i < GetN(); i++)
+	for (int i = 0; i < n; i++)
 	{
-		for (int j = 0; j < GetM(); j++)
+		for (int j = 0; j < m; j++)
 		{
 			bool up = false;
 			bool down = false;
@@ -69,11 +61,11 @@ void Maze::printMaze()
 
 			if (i > 0)
 				up = hasConnection(i, j, i - 1, j);
-			if (i < GetN() - 1)
+			if (i < n - 1)
 				down = hasConnection(i, j, i + 1, j);
 			if (j > 0)
 				left = hasConnection(i, j, i, j - 1);
-			if (j < GetM() - 1)
+			if (j < m - 1)
 				right = hasConnection(i, j, i, j + 1);
 
 			char ch = 248;
