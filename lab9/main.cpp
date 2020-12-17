@@ -7,14 +7,14 @@ void AddChildTrees(MTreeNode* tree, Maze& maze, int* distArr, int n)
 	int i = tree->i();
 	int j = tree->j();
 	int distance = tree->distance();
-	auto ñ = maze.cell(i, j);
+	auto c = maze.cell(i, j);
 	distArr[i * n + j] = distance;
-	if (ñ.right())
+	if (c.right())
 	{
 		tree->addChild(i, j + 1);
 		AddChildTrees(tree->hasChild(i, j + 1), maze, distArr, n);
 	}
-	if (ñ.down())
+	if (c.down())
 	{
 		tree->addChild(i + 1, j);
 		AddChildTrees(tree->hasChild(i + 1, j), maze, distArr, n);
