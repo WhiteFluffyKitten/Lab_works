@@ -138,11 +138,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Values.cpp" />
+    <ClCompile Include="CValue.cpp" />
+    <ClCompile Include="IValue.cpp" />
+    <ClCompile Include="QValue.cpp" />
+    <ClCompile Include="RValue.cpp" />
+    <ClCompile Include="TValue.cpp" />
+    <ClCompile Include="UValue.cpp" />
     <ClCompile Include="Task6_solution.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Values.h" />
+    <ClInclude Include="CValue.h" />
+    <ClInclude Include="IValue.h" />
+    <ClInclude Include="QValue.h" />
+    <ClInclude Include="RValue.h" />
+    <ClInclude Include="TValue.h" />
+    <ClInclude Include="UValue.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

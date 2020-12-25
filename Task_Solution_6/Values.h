@@ -1,116 +1,100 @@
 #pragma once
-#include <iostream>
-using namespace std;
+#include <ostream>
 class IValue;
 class UValue;
 class RValue;
 class QValue;
 class TValue;
 class CValue;
-
 class IValue
 {
-private:
-	double value = 0.0;
-	string unitName = "A";
-
 public:
-	IValue() {};
-	double Value();
-	string UnitName();
-	IValue(double val);
-	UValue operator*(RValue rVal)const;
-	QValue operator*(TValue tVal)const;
-	IValue operator+(IValue iVal)const;
-	IValue operator-(IValue iVal)const;
-	friend ostream& operator << (ostream& out, IValue iVal);
+	const IValue(double val) : value(val) {};
+	double Value() const noexcept { return value; };
+	UValue operator*(const RValue& rVal)const;
+	QValue operator*(const TValue& tVal)const;
+	IValue operator+(const IValue& iVal)const;
+	IValue operator-(const IValue& iVal)const;
+	friend std::ostream& operator << (std::ostream& out, const IValue& iVal);
+private:
+	double value;
 };
 
 class UValue
 {
-private:
-	double value = 0.0;
-	string unitName = "V";
+
 public:
-	UValue() {};
-	double Value();
-	string UnitName();
-	UValue(double val);
-	UValue operator+(UValue uVal)const;
-	UValue operator-(UValue uVal)const;
-	IValue operator/(RValue rVal)const;
-	RValue operator/(IValue iVal)const;
-	QValue operator*(CValue cVal)const;
-	friend ostream& operator << (ostream& out, UValue uVal);
+	const UValue(double val) : value(val) {};
+	double Value() const noexcept { return value; };
+	UValue operator+(const UValue& uVal)const;
+	UValue operator-(const UValue& uVal)const;
+	IValue operator/(const RValue& rVal)const;
+	RValue operator/(const IValue& iVal)const;
+	QValue operator*(const CValue& cVal)const;
+	friend std::ostream& operator << (std::ostream& out, const UValue& uVal);
+private:
+	double value;
 };
 
 class RValue
 {
-private:
-	double value = 0.0;
-	string unitName = "Ohm";
+
 public:
-	RValue() {};
-	double Value();
-	string UnitName();
-	RValue(double val);
-	RValue operator+(RValue rVal)const;
-	RValue operator-(RValue rVal)const;
-	UValue operator*(IValue iVal) const;
-	RValue  operator*(RValue rVal) const;
-	RValue operator%(RValue rVal) const;
-	friend ostream& operator << (ostream& out, RValue uVal);
+	const RValue(double val) : value(val) {};
+	double Value() const noexcept { return value; };
+	RValue operator+(const RValue& rVal)const;
+	RValue operator-(const RValue& rVal)const;
+	UValue operator*(const IValue& iVal) const;
+	RValue  operator*(const RValue& rVal) const;
+	RValue operator%(const RValue& rVal) const;
+	friend std::ostream& operator << (std::ostream& out, const RValue& uVal);
+private:
+	double value;
 };
 
 class QValue
 {
-private:
-	double value = 0.0;
-	string unitName = "C";
+
 public:
-	QValue() {};
-	double Value();
-	string UnitName();
-	QValue(double val);
-	QValue operator+(QValue qVal)const;
-	QValue operator-(QValue qVal)const;
-	CValue operator/(UValue uVal) const;
-	UValue operator/(CValue cVal) const;
-	IValue operator/(TValue tVal) const;
-	TValue operator/(IValue iVal) const;
-	friend ostream& operator << (ostream& out, QValue qVal);
+	const QValue(double val) : value(val) {};
+	double Value() const noexcept { return value; };
+	QValue operator+(const QValue& qVal)const;
+	QValue operator-(const QValue& qVal)const;
+	CValue operator/(const UValue& uVal) const;
+	UValue operator/(const CValue& cVal) const;
+	IValue operator/(const TValue& tVal) const;
+	TValue operator/(const IValue& iVal) const;
+	friend std::ostream& operator << (std::ostream& out, const QValue& qVal);
+private:
+	double value;
 };
 
 class TValue
 {
-private:
-	double value = 0.0;
-	string unitName = "sec";
+
 public:
-	TValue() {};
-	double Value();
-	string UnitName();
-	TValue(double val);
-	TValue operator+(TValue tVal)const;
-	TValue operator-(TValue tVal)const;
-	QValue operator*(IValue iVal)const;
-	friend ostream& operator << (ostream& out, TValue qVal);
+	const TValue(double val) : value(val) {};
+	double Value() const noexcept { return value; };
+	TValue operator+(const TValue& tVal)const;
+	TValue operator-(const TValue& tVal)const;
+	QValue operator*(const IValue& iVal)const;
+	friend std::ostream& operator << (std::ostream& out, const TValue& qVal);
+private:
+	double value;
 };
 
 class CValue
 {
-private:
-	double value = 0.0;
-	string unitName = "C";
+
 public:
-	CValue() {};
-	double Value();
-	string UnitName();
-	CValue(double val);
-	CValue operator+(CValue ñVal)const;
-	CValue operator-(CValue ñVal)const;
-	UValue operator/(QValue qVal)const;
-	QValue operator*(UValue uVal)const;
-	CValue operator%(CValue cVal) const;
-	friend ostream& operator << (ostream& out, CValue cVal);
+	const CValue(double val) : value(val) {};
+	double Value() const noexcept { return value; };
+	CValue operator+(const CValue& ñVal)const;
+	CValue operator-(const CValue& ñVal)const;
+	UValue operator/(const QValue& qVal)const;
+	QValue operator*(const UValue& uVal)const;
+	CValue operator%(const CValue& cVal) const;
+	friend std::ostream& operator << (std::ostream& out, const CValue& cVal);
+private:
+	double value;
 };

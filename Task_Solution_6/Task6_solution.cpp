@@ -1,10 +1,18 @@
-#include "Values.h"
+#pragma once
+#include "IValue.h"
+#include "RValue.h"
+#include "UValue.h"
+#include "QValue.h"
+#include "CValue.h"
+#include "TValue.h"
+#include "iostream"
+using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "Russian");
 
-	CValue c = CValue(10 * 10 ^ -6);
-	RValue r = RValue(200 * 10 ^ 3);
+	CValue c = CValue(10.0 / 1000000);
+	RValue r = RValue(200 * 1000);
 	UValue u = UValue(1);
 	TValue t = TValue(0);
 	IValue i = IValue(0);
