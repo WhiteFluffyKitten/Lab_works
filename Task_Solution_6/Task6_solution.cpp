@@ -20,7 +20,7 @@ int main()
 	cout << "Series connection Rs = " << r + r << ", Cs = " << c + c << "\n";
 	cout << "Parallel connection: Rs = " << r % r << ", Cs = " << c % c << "\n";
 
-	while (t.Value() < 2.1)
+	while (t.value() < 2.1)
 	{
 		i = u / r;
 		q = i * t;

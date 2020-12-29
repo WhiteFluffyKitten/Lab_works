@@ -2,31 +2,31 @@
 
 CValue CValue:: operator+(const CValue& cVal)const
 {
-	return CValue(Value() + cVal.Value());
+	return CValue(value() + cVal.value());
 }
 
 CValue CValue:: operator-(const CValue& cVal)const
 {
-	return CValue(Value() - cVal.Value());
+	return CValue(value() - cVal.value());
 }
 
 UValue CValue:: operator/(const QValue& qVal)const
 {
-	return UValue(Value() / qVal.Value());
+	return UValue(value() / qVal.value());
 }
 
 QValue CValue:: operator*(const UValue& uVal)const
 {
-	return QValue(Value() * uVal.Value());
+	return QValue(value() * uVal.value());
 }
 
 CValue CValue:: operator%(const CValue& cVal) const
 {
-	return CValue((Value() + cVal.Value()) / (Value() * cVal.Value()));
+	return CValue((value() + cVal.value()) / (value() * cVal.value()));
 }
 
 std::ostream& operator << (std::ostream& out, const CValue& cVal)
 {
-	out << cVal.Value() << " C " << std::endl;
+	out << cVal.value() << " C " << std::endl;
 	return out;
 }

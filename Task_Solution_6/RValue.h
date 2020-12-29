@@ -13,11 +13,11 @@ std::ostream& operator << (std::ostream& out, const RValue& uVal);
 class RValue
 {
 public:
-	const RValue(double val) : value(val) {};
-	double Value() const { return value; };
+	const RValue(double val) : m_value(val) {};
+	double value() const { return m_value; };
 	
 	// overriding + and - operators so we don't have to 
-	//use Value() getter each time in the main class for series connected resistors 
+	//use value() getter each time in the main class for series connected resistors 
 	RValue operator+(const RValue& rVal)const;
 	RValue operator-(const RValue& rVal)const;
 	
@@ -28,6 +28,6 @@ public:
 	//overriding % operator for parallel resistors connection
 	RValue operator%(const RValue& rVal) const;
 private:
-	double value = 0;
+	double m_value = 0;
 };
 

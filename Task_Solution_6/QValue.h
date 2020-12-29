@@ -12,11 +12,11 @@ class CValue;
 class QValue
 {
 public:
-	const QValue(double val) : value(val) {};
-	double Value() const { return value; };
+	const QValue(double val) : m_value(val) {};
+	double value() const { return m_value; };
 	
 	// overriding + and - operators so we don't have to 
-	//use Value() getter each time in the main class
+	//use value() getter each time in the main class
 	QValue operator+(const QValue& qVal)const;
 	QValue operator-(const QValue& qVal)const;
 	
@@ -26,5 +26,5 @@ public:
 	IValue operator/(const TValue& tVal) const;
 	TValue operator/(const IValue& iVal) const;
 private:
-	double value = 0;
+	double m_value = 0;
 };

@@ -2,32 +2,32 @@
 
 UValue UValue:: operator+(const UValue& uVal)const
 {
-	return UValue(Value() + uVal.Value());
+	return UValue(value() + uVal.value());
 }
 
 UValue UValue:: operator-(const UValue& uVal)const
 {
-	return UValue(Value() - uVal.Value());
+	return UValue(value() - uVal.value());
 }
 
 IValue UValue:: operator/(const RValue& rVal)const
 {
-	return IValue(Value() / rVal.Value());
+	return IValue(value() / rVal.value());
 }
 
 RValue UValue:: operator/(const IValue& iVal)const
 {
-	return RValue(Value() / iVal.Value());
+	return RValue(value() / iVal.value());
 }
 
 QValue UValue:: operator*(const CValue& cVal)const
 {
-	return QValue(Value() * cVal.Value());
+	return QValue(value() * cVal.value());
 }
 
 std::ostream& operator << (std::ostream& out, const UValue& uVal)
 {
-	out << uVal.Value() << " V " << std::endl;
+	out << uVal.value() << " V " << std::endl;
 	return out;
 }
 

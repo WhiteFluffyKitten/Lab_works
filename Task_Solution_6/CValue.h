@@ -13,10 +13,10 @@ std::ostream& operator << (std::ostream& out, const CValue& cVal);
 class CValue
 {
 public:
-	const CValue(double val) : value(val) {};
-	double Value() const { return value; };
+	const CValue(double val) : m_value(val) {};
+	double value() const { return m_value; };
 	
-	// overriding + and - operators so we don't have to use Value() getter  
+	// overriding + and - operators so we don't have to use value() getter  
 	// each time in the main class for parallel curcuit connection
 	CValue operator+(const CValue& ñVal)const;
 	CValue operator-(const CValue& ñVal)const;
@@ -28,5 +28,5 @@ public:
 	//overriding % operator for series circuit connection
 	CValue operator%(const CValue& cVal) const;
 private:
-	double value = 0;
+	double m_value = 0;
 };
