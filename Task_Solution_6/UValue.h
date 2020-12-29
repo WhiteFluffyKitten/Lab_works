@@ -5,23 +5,24 @@
 #include "TValue.h"
 #include <ostream>
 
-class UValue;
-class RValue;
-class QValue;
-class TValue;
-class CValue;
+
+//Voltage U(Volt)
 class UValue
 {
-
 public:
 	const UValue(double val) : value(val) {};
-	double Value() const noexcept { return value; };
+	double Value() const { return value; };
+	
+	// overriding + and - operators so we don't have to 
+	//use Value() getter each time in the main class
 	UValue operator+(const UValue& uVal)const;
 	UValue operator-(const UValue& uVal)const;
+	
+	//overriding / and * operators for U=I/R and C=q/U formulas
 	IValue operator/(const RValue& rVal)const;
 	RValue operator/(const IValue& iVal)const;
 	QValue operator*(const CValue& cVal)const;
-	friend std::ostream& operator << (std::ostream& out, const UValue& uVal);
 private:
-	double value;
+	double value = 0;
 };
+
