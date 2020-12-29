@@ -18,8 +18,8 @@ public:
 	
 	// overriding + and - operators so we don't have to use value() getter  
 	// each time in the main class for parallel curcuit connection
-	CValue operator+(const CValue& ÒVal)const;
-	CValue operator-(const CValue& ÒVal)const;
+	CValue operator+(const CValue& cVal)const;
+	CValue operator-(const CValue& cVal)const;
 	
 	// overriding / and * operators for C = q/U formula
 	UValue operator/(const QValue& qVal)const;
